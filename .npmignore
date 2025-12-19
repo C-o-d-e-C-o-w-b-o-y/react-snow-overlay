@@ -1,2 +1,19 @@
+# Images
 react-snow-overlay.webp
+
+# Documentation
 packages/docs
+HOW_TO_PUBLISH.md
+
+# Development files
+packages/
+*.log
+*.webp
+.npmrc
+.gitignore
+.eslintrc*
+eslint.config.*
+turbo.json
+pnpm-workspace.yaml
+pnpm-lock.yaml
+tsconfig.json

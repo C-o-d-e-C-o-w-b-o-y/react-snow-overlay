@@ -1,7 +1,7 @@
 {
   "name": "react-snow-overlay",
   "description": "A performant snowfall effect for your website using canvas and web workers",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "author": "Matthew Williams realcodecowboy@gmail.com (https://github.com/C-o-d-e-C-o-w-b-o-y)",
   "license": "MIT",
   "repository": {
@@ -11,24 +11,25 @@
   "homepage": "https://C-o-d-e-C-o-w-b-o-y.github.io/react-snow-overlay",
   "private": false,
   "sideEffects": false,
-  "main": "packages/react-snow-overlay/dist/index.umd.js",
-  "module": "packages/react-snow-overlay/dist/index.es.js",
-  "types": "packages/react-snow-overlay/dist/index.d.ts",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./packages/react-snow-overlay/dist/index.es.js",
-      "require": "./packages/react-snow-overlay/dist/index.umd.js",
-      "types": "./packages/react-snow-overlay/dist/index.d.ts"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
-    "packages/react-snow-overlay/dist"
+    "dist"
   ],
   "scripts": {
-    "build": "turbo build",
+    "build": "turbo build && rm -rf ./dist && cp -r packages/react-snow-overlay/dist ./dist",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
